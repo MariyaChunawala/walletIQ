@@ -1,0 +1,17 @@
+.button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: var(--color-teal-700);
+    cursor: pointer;
+
+    .button-label{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+}

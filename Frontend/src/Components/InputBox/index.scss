@@ -1,0 +1,30 @@
+.input-container{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #000;
+
+    .input-label{
+        font-size: 18px;
+    }
+
+    .input-box{
+        border: 1px solid gray;
+        border-radius: 6px;
+        display: flex;
+        cursor: text;
+    }
+
+    .password-icon-box{
+        width: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-left: 1px solid #5a5959;
+        .password-icon{
+            width: 20px;
+        }
+    }
+}

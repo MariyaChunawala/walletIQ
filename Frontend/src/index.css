@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add this custom animation section below @tailwind utilities */
+@layer utilities {
+  @keyframes floatY {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-25px);
+    }
+  }
+
+  @keyframes floatX {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(25px);
+    }
+  }
+
+  @keyframes floatDiagonal {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(15px, -25px);
+    }
+  }
+
+  .animate-floatY {
+    animation: floatY 5s ease-in-out infinite;
+  }
+
+  .animate-floatX {
+    animation: floatX 3s ease-in-out infinite;
+  }
+
+  .animate-floatDiagonal {
+    animation: floatDiagonal 7s ease-in-out infinite;
+  }
+}
+
+
+@theme {
+    --font-display: "Open Sans", sans-serif;
+    --breakpoint-3xl: 1920px;
+    --color-primary: #fff;
+    --color-teal-50: #d6ffff;
+    --color-teal-100: #aaffff;
+    --color-teal-200: #7affff;
+    --color-teal-300: #47ffff;
+    --color-teal-400: #1affff;
+    --color-teal-500: #00e5e6;
+    --color-teal-600: #00b2b3;
+    --color-teal-700: #008081;
+    --color-teal-800: #004d4e;
+    --color-teal-900: #001b1d;
+    --color-light-black: #101111;
+    --shadow-login-card-shadow: 8px 0 20px rgba(0,255,255,0.2);
+}
+
+@layer base {
+    html{
+        font-family: var(--font-display);
+        color: var(--color-primary);
+    }
+    body {
+        background-color: #111011;
+        overflow-x: hidden;
+    }
+}
