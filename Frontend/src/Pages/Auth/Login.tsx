@@ -3,13 +3,26 @@ import { Link } from "react-router-dom";
 import AuthLayout from "../../Layouts/Auth";
 import InputBox from "../../Components/InputBox";
 import FormButton from "../../Components/FormButton";
+import { validateEmail, validatePassword } from "../../Utils/utils";
+import _ from "lodash";
 
 function Login() {
     const [emailId, setEmailId] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('')
 
     const handleLogin = async (e:any) => {
         e.preventDefault();
+
+        // validate Email Address
+        const [validEmailId] = validateEmail(emailId); 
+        if(!validEmailId || _.isEmpty(password)){
+            setError('*Please enter valid login details');
+            return;
+        }else {
+            setError('');
+        }
+        //Login API Call
     }
 
     return (
@@ -21,13 +34,16 @@ function Login() {
                 </div>
                 <div className="w-[60%] bg-black p-10 rounded-2xl">
                     <form onSubmit={handleLogin}>
-                        <div className="mb-8">
+                        <div>
                             <InputBox 
                                 type='text'
                                 value={emailId} 
                                 name='user-emailid'
-                                placeholder='john@example.com' 
+                                placeholder='user@example.com' 
                                 onChangeHandler={(e:any) => setEmailId(e.target.value)} 
+                                validateInputField={() => {
+                                    return validateEmail(emailId)
+                                }}
                                 label='Email Address'
                             />
                             <InputBox
@@ -39,7 +55,8 @@ function Login() {
                                 label='Password'
                             />
                         </div>
-                        <FormButton type='submit' name='Login'/>
+                        {error && <div className="text-red-500 text-xs">{error}</div>}
+                        <FormButton type='submit' name='Login' classes='mt-8'/>
                         <div className="mt-3 text-center">
                             Don't have an account?{' '}
                             <Link to='/signup' className="underline text-teal-100">Signup</Link>
