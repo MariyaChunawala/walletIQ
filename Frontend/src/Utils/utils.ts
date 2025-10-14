@@ -13,11 +13,21 @@ export const validatePassword = (password: string) => {
         return [false, 'Please enter valid password'];
     }
     if(password.length < 8 || password.length >= 32){
-        return [false, 'Password length must be greater than 8 and less than 32 characters']
+        return [false, 'Password length must be greater than 7 and less than 32 characters']
     }
     const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     const isStrongPassword = strongPasswordRegex.test(password);
     return isStrongPassword ? 
             [true, 'Valid Password'] 
             : [false, 'Password must be contain a mix of uppercase, lowercase, numbers, and special characters.'];
+}
+
+export const validateUsername = (name: string) => {
+    if(_.isEmpty(name)){
+        return [false, 'Please enter valid username.']
+    }
+    if(name.length < 3 || name.length >= 100){
+        return [false, 'Username length must be greater than 3 and less than 100 characters']
+    }
+    return [true, 'Valid Username']
 }

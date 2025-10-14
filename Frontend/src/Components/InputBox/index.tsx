@@ -12,6 +12,7 @@ function InputBox(props: any) {
         onChangeHandler = () => {}, 
         label, 
         validateInputField = () => [true, ''],
+        classes = ''
     } = props;
 
     const [showPassword, setShowPassword] = useState(false);
@@ -29,7 +30,7 @@ function InputBox(props: any) {
     }
 
     return (
-        <div className="input-container">
+        <div className={`input-container ${classes}`}>
             <label htmlFor={name} className="input-label"> {label} </label>
             <div className={`input-box ${error ? 'error' : ''}`}>
                 <input
