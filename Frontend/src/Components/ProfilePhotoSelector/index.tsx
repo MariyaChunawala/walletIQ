@@ -26,7 +26,7 @@ function ProfilePhotoSelector(props:any){
         setPreviewUrl(null);
     }
     return (
-        <div className="flex justify-center cursor-pointer" onClick={onChooseFile}>
+        <div className="flex justify-center cursor-pointer">
             <input 
                 ref={inputRef}
                 type="file"
@@ -35,11 +35,11 @@ function ProfilePhotoSelector(props:any){
                 className="hidden"
             />
             {!image ? 
-                <div className="w-16 h-16 bg-teal-700 rounded-full -mt-3 flex items-center justify-center relative">
+                <div className="w-16 h-16 bg-teal-700 rounded-full -mt-3 flex items-center justify-center relative" onClick={onChooseFile}>
                     <LuUser className="text-4xl"/>
                     <button className="w-6 h-6 text-black bg-white rounded-full flex items-center justify-center absolute top-10 left-11 cursor-pointer"
-                        type="button" onClick={onChooseFile}>
-                            <LuUpload/>
+                        type="button">
+                            <LuUpload />
                     </button>
                 </div> 
                 : <div className="w-16 h-16 bg-teal-700 rounded-full -mt-3 flex items-center justify-center relative">
@@ -48,7 +48,7 @@ function ProfilePhotoSelector(props:any){
                         className="w-16 h-16 rounded-full"
                         alt="Profile-Photo" 
                     />
-                    <button className="w-6 h-6 text-white bg-red-500 rounded-full flex items-center justify-center absolute top-10 left-11"
+                    <button className="w-6 h-6 text-white bg-red-500 rounded-full flex items-center justify-center absolute top-10 left-11 cursor-pointer"
                             onClick={handleRemoveFile}>
                         <LuTrash />
                     </button>

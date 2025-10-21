@@ -37,7 +37,7 @@ function Signup() {
             <div className="lg:w-full flex flex-col items-center">
                 <div className="h-[3/4] flex flex-col justify-center items-center">
                     <div className="text-2xl semi-bold mt-4">Create an Account</div>
-                    <div className="text-sm text-slate-400 mt-2 mb-7">Join us today by entering your details below.</div>
+                    <div className="text-sm text-slate-400 mt-2 mb-5">Join us today by entering your details below.</div>
                 </div>
                 <div className="w-[60%] bg-black p-10 rounded-2xl">
                     <form onSubmit={handleSignup}>

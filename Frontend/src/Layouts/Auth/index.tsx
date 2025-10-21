@@ -5,14 +5,14 @@ import statsInfo from "../../Interface/StatsInfoCard";
 
 function AuthLayout(props:any) {
     return (
-        <div className="flex">
+        <div className="overflow-hidder flex">
             <div className="w-screen h-screen p-10">
                 <div className="text-[100px] font-extrabold tracking-tight 
                     bg-gradient-to-r from-teal-300 via-teal-500 to-teal-700 
                     text-transparent bg-clip-text italic text-center">
-                    <img />
                     <span className="cursor-default">WALLET IQ</span>
                 </div>
+                <div className="text-center -mt-6 mb-5 tracking-light italic ">The Intelligent Way to Manage Your Wallet</div>
                 <div>
                     {props.children}
                 </div>
