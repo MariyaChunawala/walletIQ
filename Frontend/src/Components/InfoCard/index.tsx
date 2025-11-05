@@ -1,9 +1,9 @@
 import React from "react";
 
-function StatsInfoCard(props: any) {
+function InfoCard(props: any) {
     return (
-        <div className={`w-full absolute flex justify-start items-center gap-3 ${props.color} 
-                p-3  pl-7 rounded-[15px] shadow-login-card-shadow top-12 left-7.5`}>
+        <div className={`flex justify-start items-center gap-3 ${props.color} 
+                p-3 pl-7 rounded-[15px] shadow-login-card-shadow ${props.classes}`}>
             <div className="rounded-full border-2 border-teal-500 p-2 align-center">
                 {props.icon}
             </div>
@@ -15,4 +15,4 @@ function StatsInfoCard(props: any) {
     )
 }
 
-export default StatsInfoCard;
+export default InfoCard;

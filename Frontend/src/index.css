@@ -71,7 +71,13 @@
         color: var(--color-primary);
     }
     body {
-        background-color: #111011;
+        background-color: #161617;
         overflow-x: hidden;
     }
+}
+
+@layer utilities {
+  .no-outline:focus {
+    outline: none !important;
+  }
 }

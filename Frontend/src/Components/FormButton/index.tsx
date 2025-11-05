@@ -5,7 +5,7 @@ function FormButton(props: any) {
     const {type, name, classes} = props
     return (
         <div className={`button-container ${classes}`}>
-            <button type={type} className="button-label">
+            <button type={type} className="button-label w-full">
                 {name} 
             </button>
         </div>
