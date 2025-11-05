@@ -1,6 +1,6 @@
 import React from "react";
 import authLayout from  '../../Assets/Images/authLayout.png';
-import StatsInfoCard from "../../Components/Login/StatsInfoCard";
+import InfoCard from "../../Components/InfoCard";
 import statsInfo from "../../Interface/StatsInfoCard";
 
 function AuthLayout(props:any) {
@@ -24,12 +24,13 @@ function AuthLayout(props:any) {
 
                 <div className="absolute w-[90%]">
                     { statsInfo.map(({label, icon, value, color}) => (
-                        <StatsInfoCard 
+                        <InfoCard 
                             key={label}
                             label={label}
                             icon={icon}
                             value={value}
                             color={color}
+                            classes={`w-full absolute top-12 left-7.5`}
                         />
                     ))}
                 </div>
